@@ -16,7 +16,7 @@ module.exports = {
 
         try {
             const embed = new Discord.EmbedBuilder()
-            .setTitle('\`🕷️\`〃Systeme dee suggestions')
+            .setTitle('\`🕷️\`〃Système de suggestion')
             .setDescription(`> *Le système de suggestions sera dans ce salon.*`)
             .setColor(config.color || "#FF0000")
             .setFooter({text: interaction.user.username, iconURL: interaction.user.displayAvatarURL()})
