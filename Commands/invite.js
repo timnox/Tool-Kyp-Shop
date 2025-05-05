@@ -17,7 +17,7 @@ module.exports = {
         const embed = new Discord.EmbedBuilder()
             .setTitle("\`✅\`〃Invitation créé")
             .setDescription(`> *Voici votre invitation du serveur \`${interaction.guild.name}\` pour le salon ${channel} :*\n ${invite.url}`)
-            .setColor(config.color)
+            .setColor(config.color || "#FF0000")
             .setFooter({text: interaction.user.username, iconURL: interaction.user.displayAvatarURL()})
             .setTimestamp();
         await interaction.reply({ embeds: [embed] });

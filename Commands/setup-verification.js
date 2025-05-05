@@ -16,7 +16,7 @@ try{
         const embed = new Discord.EmbedBuilder()
             .setTitle('\`🕷️\`〃Système de vérification')
             .setDescription(`> *Ce serveur vous demande de vous vérifier en écrivant \`/verify\` et avoir le rôle* ${role} (\`${role.id}\`).`)
-            .setColor(config.color)
+            .setColor(config.color || "#FF0000")
             .setFooter({text: interaction.user.username, iconURL: interaction.user.displayAvatarURL()})
             .setTimestamp();
           await channel.send({ embeds: [embed] })
@@ -27,7 +27,7 @@ try{
         } catch (e) {
             const embed = new Discord.EmbedBuilder()
             .setDescription(`\`❌\`〃*Une erreur c'est produite.*`)
-            .setColor(config.color)
+            .setColor(config.color || "#FF0000")
             await interaction.reply({ embeds: [embed], ephemeral: true });
             return;
         }
@@ -35,7 +35,7 @@ try{
         const embed = new Discord.EmbedBuilder()
             .setTitle('\`✅\`〃Système de vérification en place')
             .setDescription(`> *Système de vérification configuré dans le salon ${channel} (\`${channel.id}\`) avec le rôle ${role} (\`${role.id}\`)*`)
-            .setColor(config.color)
+            .setColor(config.color || "#FF0000")
             .setFooter({text: interaction.user.username, iconURL: interaction.user.displayAvatarURL()})
             .setTimestamp();
             await interaction.reply({ embeds: [embed], ephemeral: true });

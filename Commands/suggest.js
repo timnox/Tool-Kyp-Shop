@@ -21,7 +21,7 @@ module.exports = {
             .setTitle(`\`🕷️\`〃Suggestion envoyé par ${interaction.user.tag}`)
             .setDescription(`\`\`\`${suggestion}\`\`\``)
             .setThumbnail(interaction.user.displayAvatarURL({ dynamic: true, size: 1024 }))
-            .setColor(config.color)
+            .setColor(config.color || "#FF0000")
             .setFooter({text: interaction.user.username, iconURL: interaction.user.displayAvatarURL()})
             .setTimestamp();
             
@@ -33,14 +33,14 @@ module.exports = {
                 const embed = new Discord.EmbedBuilder()
                 .setTitle("\`✅\`Suggestion envoyée")
                 .setDescription(`> *Ta suggestion a été envoyée avec succès.*`)
-                .setColor(config.color)
+                .setColor(config.color || "#FF0000")
                 .setFooter({text: interaction.user.username, iconURL: interaction.user.displayAvatarURL()})
                 .setTimestamp();
             await interaction.reply({ embeds: [embed], ephemeral: true });
             } else {
                 const embed = new Discord.EmbedBuilder()
                 .setDescription(`> *Le salon de suggestion n'a pas été trouvé. Veuillez contacter un créateur ci dessous.*\n${ownersList.length > 0 ? ownersList.join('\n') : "*Aucun créateur configuré*"}`)
-                .setColor(config.color);
+                .setColor(config.color || "#FF0000");
             await interaction.reply({ embeds: [embed], ephemeral: true });        
             }
     },

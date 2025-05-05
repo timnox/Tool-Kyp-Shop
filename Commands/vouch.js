@@ -21,14 +21,14 @@ module.exports = {
         if (note < 1 || note > 5) {
             const embed = new Discord.EmbedBuilder()
             .setDescription(`\`❌\`〃*L'avis doit être entre 1 et 5.*`)
-            .setColor(config.color);
+            .setColor(config.color || "#FF0000");
             interaction.reply({ embeds: [embed], ephemeral: true});
         }
 
         if (interaction.user.id === member.id) {
             const embed = new Discord.EmbedBuilder()
                 .setDescription(`\`❌\`〃*Tu ne peux pas te vouch toi même.*`)
-                .setColor(config.color);
+                .setColor(config.color || "#FF0000");
             interaction.reply({ embeds: [embed], ephemeral: true });
             return;
         }
@@ -36,7 +36,7 @@ module.exports = {
         if (member.bot){
             const embed = new Discord.EmbedBuilder()
             .setDescription(`\`❌\`〃*Tu ne peux pas vouch un bot.*`)
-            .setColor(config.color);
+            .setColor(config.color || "#FF0000");
             interaction.reply({ embeds: [embed], ephemeral: true});
             return;
         }
@@ -62,7 +62,7 @@ module.exports = {
           const vouchEmbed = new Discord.EmbedBuilder()
               .setTitle(`\`🕷️\`〃Note envoyé par ${interaction.user.tag} à ${membre.user.tag}`)
               .setThumbnail(membre.user.displayAvatarURL({ dynamic: true, size: 1024 }))
-              .setColor(config.color)
+              .setColor(config.color || "#FF0000")
               .setDescription(`> *Membre :* ${membre.toString()} (\`${membre.id}\`)\n> *Service :* \`${service}\`\n> *Avis :* \`${reviews}\`\n> *Note :* \`${'⭐'.repeat(note)}\``)
               .setFooter({text: interaction.user.username, iconURL: interaction.user.displayAvatarURL()})
               .setTimestamp();
@@ -78,13 +78,13 @@ module.exports = {
             const embed = new Discord.EmbedBuilder()
             .setTitle("\`✅\`〃Noté avec succès")
             .setDescription(`> *Votre avis a été envoyé.*`)
-            .setColor(config.color)
+            .setColor(config.color || "#FF0000")
             .setFooter({text: interaction.user.username, iconURL: interaction.user.displayAvatarURL()})
             .setTimestamp();
         await interaction.reply({ embeds: [embed], ephemeral: true });
         } else {
             const embed = new Discord.EmbedBuilder()
-            .setDescription(`> *Le salon des vouchs n'a pas été trouvé. Veuillez contacter un créateur ci dessous.*\n${ownersList.length > 0 ? ownersList.join('\n') : "*Aucun créateur configuré*"}`).setColor(config.color);
+            .setDescription(`> *Le salon des vouchs n'a pas été trouvé. Veuillez contacter un créateur ci dessous.*\n${ownersList.length > 0 ? ownersList.join('\n') : "*Aucun créateur configuré*"}`).setColor(config.color || "#FF0000");
         await interaction.reply({ embeds: [embed], ephemeral: true });        
         }
     },

@@ -17,7 +17,7 @@ module.exports = {
         if (!role.editable) {
             const embed = new Discord.EmbedBuilder()
             .setDescription(`\`❌\`〃*Veuillez vérifier que le rôle peut être donner par le bot.*`)
-            .setColor(config.color)
+            .setColor(config.color || "#FF0000");
         await interaction.reply({ embeds: [embed], ephemeral: true });
         return;
         }
@@ -45,7 +45,7 @@ module.exports = {
         const embed = new Discord.EmbedBuilder()
         .setTitle("\`✅\`〃Massrole terminé")
         .setDescription(`> *Role ${role} (\`${role.id}\`) a été ${action === 'add'? 'ajouté' : 'retiré'} de ${modifiedMembers}/${totalMembers} membres.*`)
-        .setColor(config.color)
+        .setColor(config.color || "#FF0000");
     await interaction.reply({ embeds: [embed] });
     return;
     },

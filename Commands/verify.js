@@ -14,7 +14,7 @@ module.exports = {
                     const embed = new Discord.EmbedBuilder()
                     .setTitle('\`🕷️\`〃Vérification déactivée')
                     .setDescription('> *La vérification n\'a pas été activée dans ce serveur.*')
-                    .setColor(config.color)
+                    .setColor(config.color || "#FF0000")
                     .setFooter({text: interaction.user.username, iconURL: interaction.user.displayAvatarURL()})
                     .setTimestamp();
                 await interaction.reply({ embeds: [embed], ephemeral: true });
@@ -24,7 +24,7 @@ module.exports = {
         if (interaction.channelId !== verificationChannelId) {
             const embed = new Discord.EmbedBuilder()
             .setDescription(`\`❌\`〃*utilise la commande \`/verify\` dans le salon <#${verificationChannelId}>.*`)
-            .setColor(config.color)
+            .setColor(config.color || "#FF0000")
         await interaction.reply({ embeds: [embed], ephemeral: true });
         return;
         }
@@ -36,7 +36,7 @@ module.exports = {
             const embed = new Discord.EmbedBuilder()
             .setTitle('\`🕷️\`〃Le rôle n\'existe pas')
             .setDescription('> *Le rôle de vérification n\'existe pas dans ce serveur.*')
-            .setColor(config.color)
+            .setColor(config.color || "#FF0000")
             .setFooter({text: interaction.user.username, iconURL: interaction.user.displayAvatarURL()})
             .setTimestamp();
         await interaction.reply({ embeds: [embed], ephemeral: true });
@@ -47,7 +47,7 @@ module.exports = {
             const embed = new Discord.EmbedBuilder()
             .setTitle('\`🕷️\`〃Déjà vérifié')
             .setDescription('> *Vous êtes déjà vérifiés.*')
-            .setColor(config.color)
+            .setColor(config.color || "#FF0000")
             .setFooter({text: interaction.user.username, iconURL: interaction.user.displayAvatarURL()})
             .setTimestamp();
         await interaction.reply({ embeds: [embed], ephemeral: true });
@@ -59,7 +59,7 @@ module.exports = {
         const dmEmbed = new Discord.EmbedBuilder()
         .setTitle('\`✅\`〃Vérification passée')
         .setDescription('> *Vous avez été vérifié avec succès.*')
-        .setColor(config.color)
+        .setColor(config.color || "#FF0000")
         .setFooter({text: interaction.user.username, iconURL: interaction.user.displayAvatarURL()})
         .setTimestamp();
 
@@ -67,7 +67,7 @@ module.exports = {
             const embed = new Discord.EmbedBuilder()
             .setTitle('\`✅\`〃Vérificattion passée')
             .setDescription('> *Vous avez été vérifié avec succès.*')
-            .setColor(config.color)
+            .setColor(config.color || "#FF0000")
             .setFooter({text: interaction.user.username, iconURL: interaction.user.displayAvatarURL()})
             .setTimestamp();
             interaction.reply({ embeds: [embed], ephemeral: true });

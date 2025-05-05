@@ -15,7 +15,7 @@ module.exports = {
             const embed = new Discord.EmbedBuilder()
             .setTitle('\`🕷️\`〃Systeme dee suggestions')
             .setDescription(`> *Le système de suggestions sera dans ce salon.*`)
-            .setColor(config.color)
+            .setColor(config.color || "#FF0000")
             .setFooter({text: interaction.user.username, iconURL: interaction.user.displayAvatarURL()})
             .setTimestamp();
           await suggestionChannel.send({ embeds: [embed] })
@@ -23,7 +23,7 @@ module.exports = {
           const embed2 = new Discord.EmbedBuilder()
           .setTitle('\`✅\`〃Système de suggestions')
           .setDescription(`> *Le système de suggestions sera dans le salon ${suggestionChannel} (\`${suggestionChannel.id}\`)*`)
-          .setColor(config.color)
+          .setColor(config.color || "#FF0000")
           .setFooter({text: interaction.user.username, iconURL: interaction.user.displayAvatarURL()})
           .setTimestamp();
           await interaction.reply({ embeds: [embed2], ephemeral: true });
@@ -34,7 +34,7 @@ module.exports = {
         } catch (e) {
             const embed = new Discord.EmbedBuilder()
             .setDescription(`\`❌\`〃*Une erreur c'est produite.*`)
-            .setColor(config.color)
+            .setColor(config.color || "#FF0000")
             await interaction.reply({ embeds: [embed], ephemeral: true });
         }
     },

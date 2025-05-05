@@ -37,14 +37,14 @@ module.exports = {
 
             const embed2 = new Discord.EmbedBuilder()
                 .setDescription(`\`✅\`〃*Recréé par* **\`${interaction.user.tag} | ${interaction.user.id}\`** ${newChannel}`)
-                .setColor(config.color);
+                .setColor(config.color || "#FF0000");
             await newChannel.send({ embeds: [embed2] });
             return;
         } catch (e) {
             console
             const embed = new Discord.EmbedBuilder()
                 .setDescription('\`❌\`〃*Une erreur c\'est produite.*')
-                .setColor(config.color);
+                .setColor(config.color || "#FF0000");
             await interaction.reply({ embeds: [embed], ephemeral: true });
             return;
         }

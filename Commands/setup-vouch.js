@@ -14,7 +14,7 @@ module.exports = {
             const embed = new Discord.EmbedBuilder()
             .setTitle('\`🕷️\`〃Système de vouchs')
             .setDescription(`> *Les vouchs seront envoyés dans ce salon.*`)
-            .setColor(config.color)
+            .setColor(config.color || "#FF0000")
             .setFooter({text: interaction.user.username, iconURL: interaction.user.displayAvatarURL()})
             .setTimestamp();
           await vouchChannel.send({ embeds: [embed] })
@@ -22,7 +22,7 @@ module.exports = {
           const embed2 = new Discord.EmbedBuilder()
           .setTitle('\`✅\`〃Vouch system successfully')
           .setDescription(`> *Les vouchs seront envoyés dans le salon ${vouchChannel} (\`${vouchChannel.id}\`)*`)
-          .setColor(config.color)
+          .setColor(config.color || "#FF0000")
           .setFooter({text: interaction.user.username, iconURL: interaction.user.displayAvatarURL()})
           .setTimestamp();
           await interaction.reply({ embeds: [embed2], ephemeral: true });
@@ -33,7 +33,7 @@ module.exports = {
         } catch (e) {
             const embed = new Discord.EmbedBuilder()
             .setDescription(`\`❌\`〃*Une erreur c'est produite.*`)
-            .setColor(config.color)
+            .setColor(config.color || "#FF0000")
             await interaction.reply({ embeds: [embed], ephemeral: true });
         }
     },

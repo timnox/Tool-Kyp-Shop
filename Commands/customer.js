@@ -18,7 +18,7 @@ module.exports = {
     if (!customerRole) {
       const embed = new Discord.EmbedBuilder()
         .setDescription(`\`🕷️\`〃*Le rôle des acheteurs n'est pas défini, veuillez contacter un créateur ci dessous.*\n${ownersList.length > 0 ? ownersList.join('\n') : "*Aucun créateur défini*"}`)
-        .setColor(config.color);
+        .setColor(config.color || "#FF0000");
       await interaction.reply({ embeds: [embed], ephemeral: true });
       return;
     } 
@@ -29,12 +29,12 @@ module.exports = {
         const embed = new Discord.EmbedBuilder()
           .setTitle("\`✅\`〃Le rôle a été donné")
           .setDescription(`> *Le rôle ${customerRole} a bien été donné à ${user} (\`${user.id}\`).*`)
-          .setColor(config.color);
+          .setColor(config.color || "#FF0000");
         await interaction.reply({ embeds: [embed] });
       } catch (e) {
         const embed = new Discord.EmbedBuilder()
           .setDescription(`\`❌\`〃*Une erreur c'est produite, veuillez vérifier que le bot a les permissions de donner ce rôle.*`)
-          .setColor(config.color);
+          .setColor(config.color || "#FF0000");
         await interaction.reply({ embeds: [embed], ephemeral: true });
       }      
   },

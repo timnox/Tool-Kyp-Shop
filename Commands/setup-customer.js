@@ -14,7 +14,7 @@ module.exports = {
           const embed = new Discord.EmbedBuilder()
           .setTitle('\`✅\`〃Le rôle des acheteurs été defini')
           .setDescription(`> *Le rôle des acheteurs a bien été configuré sur ${customerRole} (\`${customerRole.id}\`)*`)
-          .setColor(config.color)
+          .setColor(config.color || "#FF0000")
           .setFooter({text: interaction.user.username, iconURL: interaction.user.displayAvatarURL()})
           .setTimestamp();
           await interaction.reply({ embeds: [embed], ephemeral: true });
@@ -25,7 +25,7 @@ module.exports = {
         } catch (e) {
             const embed = new Discord.EmbedBuilder()
             .setDescription(`\`❌\`〃*Une erreur c'est produite.*`)
-            .setColor(config.color)
+            .setColor(config.color || "#FF0000")
             await interaction.reply({ embeds: [embed], ephemeral: true });
         }
     },
