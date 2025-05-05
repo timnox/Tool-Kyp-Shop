@@ -105,4 +105,5 @@ process.on('unhandledRejection', (reason, promise) => {
     const ignoredCodes = [10008, 50013, 50035, 40060, 10003, 10014, 50001, 10015];
     if (ignoredCodes.includes(reason.code)) return;
     console.error('Une promise unhandled est apparu :', reason);
+    console.log("La couleur du bot est :", process.env.COLOR); // Affiche la valeur de la couleur
 });
