@@ -8,6 +8,9 @@ module.exports = {
         .setDescription('Défnie le salon des vouchs.')
         .addChannelOption(option => option.setName('channel').setDescription('Le salon où les vouchs seront envoyés').setRequired(true)),
     async execute(interaction, config) {
+    // Validation de la couleur hex
+    const isHex = /^#[0-9A-Fa-f]{6}$/.test(config.color);
+    const embedColor = isHex ? config.color : "#FF0000";
         const vouchChannel = interaction.options.getChannel('channel');
 
         try {

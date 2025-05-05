@@ -6,6 +6,9 @@ module.exports = {
         .setName('help')
         .setDescription('Affiche les commandes du bot.'),
     execute(interaction, config) {
+    // Validation de la couleur hex
+    const isHex = /^#[0-9A-Fa-f]{6}$/.test(config.color);
+    const embedColor = isHex ? config.color : "#FF0000";
 
         const embed = new Discord.EmbedBuilder()
         .setTitle('\`🕷️\`〃Help')

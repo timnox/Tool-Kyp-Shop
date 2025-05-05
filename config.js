@@ -1,7 +1,7 @@
 module.exports = {
   token: process.env.TOKEN,
   owner: process.env.OWNER_IDS?.split(',') || [],
-  color: "#" + (process.env.COLOR || "FF0000"), // <-- ajout du # ici
+  color: "#" + (process.env.COLOR || "FF0000"),
   statut: process.env.STATUT || "Mon statut",
   activity: process.env.ACTIVITY || "playing",
   status: process.env.STATUS || "online",

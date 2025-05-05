@@ -9,6 +9,9 @@ module.exports = {
         .addChannelOption(option => option.setName('channel').setDescription('Le salon de vérification').setRequired(true))
         .addRoleOption(option => option.setName('role').setDescription('Le rôle à donner aprèsla vérification').setRequired(true)),
     async execute(interaction, config) {
+    // Validation de la couleur hex
+    const isHex = /^#[0-9A-Fa-f]{6}$/.test(config.color);
+    const embedColor = isHex ? config.color : "#FF0000";
 
         const channel = interaction.options.getChannel('channel');
         const role = interaction.options.getRole('role');

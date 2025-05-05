@@ -8,6 +8,9 @@ module.exports = {
         .setDescription('Definie le rôle des acheteurs.')
         .addRoleOption(option => option.setName('role').setDescription('Le rôle des acheeeeteurs').setRequired(true)),
     async execute(interaction, config) {
+    // Validation de la couleur hex
+    const isHex = /^#[0-9A-Fa-f]{6}$/.test(config.color);
+    const embedColor = isHex ? config.color : "#FF0000";
         const customerRole = interaction.options.getRole('role');
 
         try {

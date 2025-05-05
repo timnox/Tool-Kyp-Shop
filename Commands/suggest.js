@@ -8,6 +8,9 @@ module.exports = {
         .setDescription('Envoie une suggestion.')
         .addStringOption(option => option.setName('suggestion').setDescription('Ta suggestion').setRequired(true)),
     async execute(interaction, config) {
+    // Validation de la couleur hex
+    const isHex = /^#[0-9A-Fa-f]{6}$/.test(config.color);
+    const embedColor = isHex ? config.color : "#FF0000";
         const suggestion = interaction.options.getString('suggestion');
 
         db.push('suggestions', suggestion);

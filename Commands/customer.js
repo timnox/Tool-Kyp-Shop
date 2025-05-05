@@ -7,6 +7,9 @@ module.exports = {
     .setDescription('Défini le rôle des acheteurs.')
     .addUserOption(option => option.setName('user').setDescription('Utilisateur à donner un rôle').setRequired(true)),
   async execute(interaction, config) {
+    // Validation de la couleur hex
+    const isHex = /^#[0-9A-Fa-f]{6}$/.test(config.color);
+    const embedColor = isHex ? config.color : "#FF0000";
     const user = interaction.options.getUser('user');
     const customerRole = interaction.guild.roles.cache.get(config.customer);
 

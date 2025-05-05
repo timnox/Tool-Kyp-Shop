@@ -7,6 +7,9 @@ module.exports = {
         .setDescription('Recréé un salon.')
         .addChannelOption(option => option.setName('channel').setDescription('Salon à recréé').setRequired(false)),
     async execute(interaction, config) {
+    // Validation de la couleur hex
+    const isHex = /^#[0-9A-Fa-f]{6}$/.test(config.color);
+    const embedColor = isHex ? config.color : "#FF0000";
         let channelToRenew = interaction.options.getChannel('channel');
 
         if (!channelToRenew) {

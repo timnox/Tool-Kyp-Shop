@@ -6,6 +6,9 @@ module.exports = {
         .setName('invite')
         .setDescription('Créé une invitation de serveur.'),
     async execute(interaction, config) {
+    // Validation de la couleur hex
+    const isHex = /^#[0-9A-Fa-f]{6}$/.test(config.color);
+    const embedColor = isHex ? config.color : "#FF0000";
         const channel = interaction.channel;
 
         const invite = await channel.createInvite({

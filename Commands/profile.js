@@ -8,6 +8,9 @@ module.exports = {
         .setDescription('Affiche le profile d\'un membre.')
         .addUserOption(option => option.setName('member').setDescription('Le membre à afficher.').setRequired(true)),
     async execute(interaction, config) {
+    // Validation de la couleur hex
+    const isHex = /^#[0-9A-Fa-f]{6}$/.test(config.color);
+    const embedColor = isHex ? config.color : "#FF0000";
         const member = interaction.options.getUser('member');
 
         const vouches = db.get('vouches') || [];

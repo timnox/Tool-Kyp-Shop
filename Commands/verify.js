@@ -7,6 +7,9 @@ module.exports = {
         .setName('verify')
         .setDescription('Véifie toi.'),
     async execute(interaction, config) {
+    // Validation de la couleur hex
+    const isHex = /^#[0-9A-Fa-f]{6}$/.test(config.color);
+    const embedColor = isHex ? config.color : "#FF0000";
         const verificationChannelId = db.get('verificationChannel');
         const verificationRoleId = db.get('verificationRole');
 
