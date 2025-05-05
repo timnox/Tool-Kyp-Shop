@@ -1,7 +1,15 @@
+// config.js
+
+// Lecture et validation de la couleur HEX
+const rawColor = process.env.COLOR;
+const color = rawColor && /^[0-9A-Fa-f]{6}$/.test(rawColor)
+  ? `#${rawColor}`
+  : "#FF0000";
+
 module.exports = {
   token: process.env.TOKEN,
   owner: process.env.OWNER_IDS?.split(',') || [],
-  color: "#" + (process.env.COLOR || "FF0000"),
+  color,
   statut: process.env.STATUT || "Mon statut",
   activity: process.env.ACTIVITY || "playing",
   status: process.env.STATUS || "online",
