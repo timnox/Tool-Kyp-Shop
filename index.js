@@ -1,4 +1,5 @@
 require('dotenv').config(); // <-- AJOUTÉ
+console.log("→ process.env.COLOR =", process.env.COLOR);
 const { Client, Collection, EmbedBuilder, ActivityType } = require('discord.js');
 const { Routes } = require('discord-api-types/v9');
 const { REST } = require('@discordjs/rest');
