@@ -1,0 +1,22 @@
+{
+    "name": "shop-bot",
+    "version": "1.0.0",
+    "description": "Tool Kyp-Shop",
+    "main": "index.js",
+    "scripts": {
+      "start": "node index.js",        
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Kms",
+    "license": "ISC",
+    "dependencies": {
+      "@discordjs/builders": "^0.6.0",
+      "@discordjs/rest": "^1.7.1",
+      "discord-api-types": "^0.37.41",
+      "discord.js": "^14.13.0",
+      "dotenv": "^16.5.0",
+      "fs": "^0.0.1-security",
+      "quick.db": "^7.1.3"
+    }
+  }
+  
