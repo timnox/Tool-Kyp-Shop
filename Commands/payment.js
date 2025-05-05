@@ -12,7 +12,7 @@ module.exports = {
 
         const embed = new Discord.EmbedBuilder()
             .setTitle('\`🕷️\`〃Options de paiements')
-            .setDescription('> *PayPal :* [Lien Paypal](https://discord.gg/ffgdqP9KTc)\n> *Ltc :* \`ltc1q9w6zc4xskjrteezaxda044e7chws0dm4gxhlad\`')
+            .setDescription('> *PayPal :* [Lien Paypal](https://paypal.me/Yliessbarbess)\n> *Ltc :* \`LSJopwAwFDxZRxb19xWdcvCk8rL5EcDcmj` ***Payement uniquement en proche et sans note.(Uniquement pour Paypal)***')
             .setColor(config.color || "#FF0000")
             .setFooter({text: interaction.user.username, iconURL: interaction.user.displayAvatarURL()})
             .setTimestamp();
