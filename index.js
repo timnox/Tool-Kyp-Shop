@@ -20,7 +20,7 @@ for (const file of commandFiles) {
     }
 }
 
-const rest = new REST({ version: '9' }).setToken(process.env.TOKEN); // <-- changé
+const rest = new REST({ version: '9' }).setToken(process.env.TOKEN);
 
 async function deployCommands() {
     const commands = Array.from(client.commands.values()).map(command => command.data.toJSON());
@@ -85,7 +85,7 @@ client.on('interactionCreate', async (interaction) => {
 });
 
 client.on('messageCreate', async (message) => {
-    if (message.channel.id === process.env.VOUCH_LOGS_ID) { // <-- modifié
+    if (message.channel.id === process.env.VOUCH_LOGS_ID) { 
         if (message.author.bot) return;
 
         const embed = new EmbedBuilder()
@@ -106,5 +106,5 @@ process.on('unhandledRejection', (reason, promise) => {
     const ignoredCodes = [10008, 50013, 50035, 40060, 10003, 10014, 50001, 10015];
     if (ignoredCodes.includes(reason.code)) return;
     console.error('Une promise unhandled est apparu :', reason);
-    console.log("La couleur du bot est :", process.env.COLOR); // Affiche la valeur de la couleur
+    console.log("La couleur du bot est :", process.env.COLOR); 
 });

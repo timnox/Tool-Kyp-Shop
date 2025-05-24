@@ -1,10 +1,10 @@
-// config.js
 
-// Lecture et validation de la couleur HEX
+
+
 const rawColor = process.env.COLOR;
 const color = rawColor && /^[0-9A-Fa-f]{6}$/.test(rawColor)
   ? `#${rawColor}`
-  : "#FF0000";
+  : "#bb53ff";
 
 module.exports = {
   token: process.env.TOKEN,
