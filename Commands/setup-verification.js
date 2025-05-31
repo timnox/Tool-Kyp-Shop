@@ -17,7 +17,7 @@ module.exports = {
         const role = interaction.options.getRole('role');
 try{
         const embed = new Discord.EmbedBuilder()
-            .setTitle('\`🕷️\`〃Système de vérification')
+            .setTitle('\`🚧\`〃Système de vérification')
             .setDescription(`> *Ce serveur vous demande de vous vérifier en écrivant \`/verify\` et avoir le rôle* ${role} (\`${role.id}\`).`)
             .setColor(config.color || "#FF0000")
             .setFooter({text: interaction.user.username, iconURL: interaction.user.displayAvatarURL()})

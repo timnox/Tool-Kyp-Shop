@@ -15,7 +15,7 @@ module.exports = {
 
         if (!verificationChannelId || !verificationRoleId) {
                     const embed = new Discord.EmbedBuilder()
-                    .setTitle('\`🕷️\`〃Vérification déactivée')
+                    .setTitle('\`❌\`〃Vérification déactivée')
                     .setDescription('> *La vérification n\'a pas été activée dans ce serveur.*')
                     .setColor(config.color || "#FF0000")
                     .setFooter({text: interaction.user.username, iconURL: interaction.user.displayAvatarURL()})
@@ -37,7 +37,7 @@ module.exports = {
 
         if (!role) {
             const embed = new Discord.EmbedBuilder()
-            .setTitle('\`🕷️\`〃Le rôle n\'existe pas')
+            .setTitle('\`❌\`〃Le rôle n\'existe pas')
             .setDescription('> *Le rôle de vérification n\'existe pas dans ce serveur.*')
             .setColor(config.color || "#FF0000")
             .setFooter({text: interaction.user.username, iconURL: interaction.user.displayAvatarURL()})
@@ -48,7 +48,7 @@ module.exports = {
 
         if (member.roles.cache.has(verificationRoleId)) {
             const embed = new Discord.EmbedBuilder()
-            .setTitle('\`🕷️\`〃Déjà vérifié')
+            .setTitle('\`🚧\`〃Déjà vérifié')
             .setDescription('> *Vous êtes déjà vérifiés.*')
             .setColor(config.color || "#FF0000")
             .setFooter({text: interaction.user.username, iconURL: interaction.user.displayAvatarURL()})

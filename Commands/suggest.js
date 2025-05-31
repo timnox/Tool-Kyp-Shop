@@ -21,7 +21,7 @@ module.exports = {
           });
 
         const suggestionEmbed = new Discord.EmbedBuilder()
-            .setTitle(`\`🕷️\`〃Suggestion envoyé par ${interaction.user.tag}`)
+            .setTitle(`\`🎯\`〃Suggestion envoyé par ${interaction.user.tag}`)
             .setDescription(`\`\`\`${suggestion}\`\`\``)
             .setThumbnail(interaction.user.displayAvatarURL({ dynamic: true, size: 1024 }))
             .setColor(config.color || "#FF0000")

@@ -19,7 +19,7 @@ module.exports = {
 
         if (memberVouches.length === 0) {
             const embed = new Discord.EmbedBuilder()
-            .setTitle("\`🕷️\`〃Aucun vouch trouvé")
+            .setTitle("\`❌\`〃Aucun vouch trouvé")
             .setDescription(`> *Aucun vouch trouvé pour le membre ${member} (\`${member.id}\`)*`)
             .setColor(config.color || "#FF0000")
             .setFooter({text: interaction.user.username, iconURL: interaction.user.displayAvatarURL()})
@@ -35,7 +35,7 @@ module.exports = {
         let vouch = memberVouches.slice(vouchIndex, vouchIndex + maxVouchesPerPage);
 
         const embed = new Discord.EmbedBuilder()
-        .setTitle(`\`🕷️\`〃Vouch de ${member.tag}`)
+        .setTitle(`\`🪪\`〃Vouch de ${member.tag}`)
         .setDescription(`> *Voucher :* <@${interaction.guild.members.cache.get(vouch[0].reviewer).id}>\n> *Service :* **\`${vouch[0].service}\`**\n> *Avis :* **\`${vouch[0].reviews}\`**\n> *Note :* **\`${'⭐'.repeat(vouch[0].note)}\`**\n> *Image :* \`${vouch[0].image}\``)
         .setThumbnail(interaction.guild.members.cache.get(vouch[0].reviewer).user.displayAvatarURL({ dynamic: true, size: 1024 }))
         .setColor(config.color || "#FF0000")
@@ -94,7 +94,7 @@ module.exports = {
             vouchIndex -= maxVouchesPerPage;
             vouch = memberVouches.slice(vouchIndex, vouchIndex + maxVouchesPerPage);
 
-            embed.setTitle(`\`🕷️\`〃Vouch de ${member.tag}`)
+            embed.setTitle(`\`🪪\`〃Vouch de ${member.tag}`)
             embed.setDescription(`> *Voucher :* <@${interaction.guild.members.cache.get(vouch[0].reviewer).id}>\n> *Service :* **\`${vouch[0].service}\`**\n> *Avis :* **\`${vouch[0].reviews}\`**\n> *Note :* **\`${'⭐'.repeat(vouch[0].note)}\`**\n> *Image :* \`${vouch[0].image}\``)
             embed.setThumbnail(interaction.guild.members.cache.get(vouch[0].reviewer).user.displayAvatarURL({ dynamic: true, size: 1024 }))
             embed.setColor(config.color || "#FF0000")
@@ -113,7 +113,7 @@ module.exports = {
             vouchIndex += maxVouchesPerPage;
             vouch = memberVouches.slice(vouchIndex, vouchIndex + maxVouchesPerPage);
 
-            embed.setTitle(`\`🕷️\`〃Vouch de ${member.tag}`)
+            embed.setTitle(`\`🪪\`〃Vouch de ${member.tag}`)
             embed.setDescription(`> *Voucher :* <@${interaction.guild.members.cache.get(vouch[0].reviewer).id}>\n> *Service :* **\`${vouch[0].service}\`**\n> *Avis :* **\`${vouch[0].reviews}\`**\n> *Note :* **\`${'⭐'.repeat(vouch[0].note)}\`**\n> *Image :* \`${vouch[0].image}\``)
             embed.setThumbnail(interaction.guild.members.cache.get(vouch[0].reviewer).user.displayAvatarURL({ dynamic: true, size: 1024 }))
             embed.setColor(config.color || "#FF0000")
@@ -132,7 +132,7 @@ module.exports = {
             vouchIndex = 0;
             vouch = memberVouches.slice(vouchIndex, vouchIndex + maxVouchesPerPage);
 
-            embed.setTitle(`\`🕷️\`〃Vouch de ${member.tag}`)
+            embed.setTitle(`\`🪪\`〃Vouch de ${member.tag}`)
             embed.setDescription(`> *Voucher :* <@${interaction.guild.members.cache.get(vouch[0].reviewer).id}>\n> *Service :* **\`${vouch[0].service}\`**\n> *Avis :* **\`${vouch[0].reviews}\`**\n> *Note :* **\`${'⭐'.repeat(vouch[0].note)}\`**\n> *Image :* \`${vouch[0].image}\``)
             embed.setThumbnail(interaction.guild.members.cache.get(vouch[0].reviewer).user.displayAvatarURL({ dynamic: true, size: 1024 }))
             embed.setColor(config.color || "#FF0000")

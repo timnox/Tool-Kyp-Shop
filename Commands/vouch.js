@@ -63,7 +63,7 @@ module.exports = {
           const membre = interaction.guild.members.cache.get(member.id);
           
           const vouchEmbed = new Discord.EmbedBuilder()
-              .setTitle(`\`🕷️\`〃Note envoyé par ${interaction.user.tag} à ${membre.user.tag}`)
+              .setTitle(`\`💰\`〃Note envoyé par ${interaction.user.tag} à ${membre.user.tag}`)
               .setThumbnail(membre.user.displayAvatarURL({ dynamic: true, size: 1024 }))
               .setColor(config.color || "#FF0000")
               .setDescription(`> *Membre :* ${membre.toString()} (\`${membre.id}\`)\n> *Service :* \`${service}\`\n> *Avis :* \`${reviews}\`\n> *Note :* \`${'⭐'.repeat(note)}\``)

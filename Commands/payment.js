@@ -11,7 +11,7 @@ module.exports = {
     const embedColor = isHex ? config.color : "#FF0000";
 
         const embed = new Discord.EmbedBuilder()
-            .setTitle('\`🕷️\`〃Options de paiements')
+            .setTitle('\`💸\`〃Options de paiements')
             .setDescription('> *PayPal :* [Lien Paypal](https://paypal.me/EthanWolker?country.x=FR&locale.x=fr_FR) ***__Payement uniquement en proche et sans note.__***\n> *Ltc :* \`LSJopwAwFDxZRxb19xWdcvCk8rL5EcDcmj`')
             .setColor(config.color || "#FF0000")
             .setFooter({text: interaction.user.username, iconURL: interaction.user.displayAvatarURL()})

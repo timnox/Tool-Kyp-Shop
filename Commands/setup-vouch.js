@@ -15,7 +15,7 @@ module.exports = {
 
         try {
             const embed = new Discord.EmbedBuilder()
-            .setTitle('\`🕷️\`〃Système de vouchs')
+            .setTitle('\`🪪\`〃Système de vouchs')
             .setDescription(`> *Les vouchs seront envoyés dans ce salon.*`)
             .setColor(config.color || "#FF0000")
             .setFooter({text: interaction.user.username, iconURL: interaction.user.displayAvatarURL()})
