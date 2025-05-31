@@ -72,7 +72,7 @@ client.on('interactionCreate', async (interaction) => {
 
     if (!config.owner.includes(interaction.user.id) && !publicCommands.includes(interaction.commandName)) {
         const embed = new EmbedBuilder()
-            .setDescription('\`🕷️\` 〃*Tu n\'es pas autorisé à faire cette commande!*')
+            .setDescription('\`📡\` 〃*Tu n\'es pas autorisé à faire cette commande!*')
             .setColor(config.color);
         await interaction.reply({ embeds: [embed], ephemeral: true });
         return;
@@ -89,7 +89,7 @@ client.on('messageCreate', async (message) => {
         if (message.author.bot) return;
 
         const embed = new EmbedBuilder()
-            .setDescription('\`🕷️\` 〃*Utilisez la commande \`/vouch\` pour donner votre avis !*')
+            .setDescription('\`📡\` 〃*Utilisez la commande \`/vouch\` pour donner votre avis !*')
             .setColor(config.color);
         const cc = await message.reply({ content: `${message.author}`, embeds: [embed] });
 

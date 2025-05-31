@@ -20,7 +20,7 @@ module.exports = {
 
     if (!customerRole) {
       const embed = new Discord.EmbedBuilder()
-        .setDescription(`\`🕷️\`〃*Le rôle des acheteurs n'est pas défini, veuillez contacter un créateur ci dessous.*\n${ownersList.length > 0 ? ownersList.join('\n') : "*Aucun créateur défini*"}`)
+        .setDescription(`\`📡\`〃*Le rôle des acheteurs n'est pas défini, veuillez contacter un créateur ci dessous.*\n${ownersList.length > 0 ? ownersList.join('\n') : "*Aucun créateur défini*"}`)
         .setColor(config.color || "#FF0000");
       await interaction.reply({ embeds: [embed], ephemeral: true });
       return;
